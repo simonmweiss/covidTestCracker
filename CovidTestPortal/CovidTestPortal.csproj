@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="music.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Locations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dates\" />
+  </ItemGroup>
+	<ItemGroup>
+		<Content Include="Dates\**">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+	  <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\CovidTestObjects\CovidTestObjects.csproj" />
+	</ItemGroup>
+
+</Project>
